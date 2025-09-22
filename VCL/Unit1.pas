@@ -81,15 +81,16 @@ procedure TForm1.Button1Click(Sender: TObject);
 var
   bmp: TBitmap;
 begin
-OpenDialog1.Filter := 'PNG Images (*.png)|*.png';
-if(OpenDialog1.Execute) then
-  begin
-    bmp := ResizeImageMitchell(OpenDialog1.Filename, 800, 800);
-    if(Assigned(bmp)) then
-      begin
-        Image1.Picture.Bitmap := bmp;
-        bmp.free;
-      end;
-  end;end;
+  OpenDialog1.Filter := 'PNG Images (*.png)|*.png';
+  if(OpenDialog1.Execute) then
+    begin
+      bmp := ResizeImageMitchell(OpenDialog1.Filename, 800, 800);
+      if(Assigned(bmp)) then
+        begin
+          Image1.Picture.Bitmap := bmp;
+          bmp.free;
+        end;
+  end;
+end;
 
 end.

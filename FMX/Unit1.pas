@@ -3,7 +3,7 @@
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  System.SysUtils, System.Types, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Menus, FMX.Objects, FMX.Controls.Presentation, FMX.StdCtrls;
 
@@ -27,7 +27,7 @@ implementation
 {$R *.fmx}
 
 uses
-  System.Skia, FMX.Skia;
+  System.Skia, FMX.Skia, System.UITypes;
 
 function ResizeImageMitchell(const AFilename: String;
   const ANewWidth, ANewHeight: Integer): TBitmap;
@@ -81,16 +81,16 @@ procedure TForm1.Button1Click(Sender: TObject);
 var
   bmp: TBitmap;
 begin
-OpenDialog1.Filter := 'PNG Images (*.png)|*.png';
-if(OpenDialog1.Execute) then
-  begin
-    bmp := ResizeImageMitchell(OpenDialog1.Filename, 800, 800);
-    if(Assigned(bmp)) then
-      begin
-        Image1.Bitmap := bmp;
-        bmp.free;
-      end;
-  end;
+  OpenDialog1.Filter := 'PNG Images (*.png)|*.png';
+  if(OpenDialog1.Execute) then
+    begin
+      bmp := ResizeImageMitchell(OpenDialog1.Filename, 800, 800);
+      if(Assigned(bmp)) then
+        begin
+          Image1.Bitmap := bmp;
+          bmp.free;
+        end;
+    end;
 end;
 
 end.
