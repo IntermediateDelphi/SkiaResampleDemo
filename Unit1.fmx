@@ -13,21 +13,14 @@ object Form1: TForm1
     Size.Width = 800.000000000000000000
     Size.Height = 800.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 2
-    object Button2: TButton
-      Position.X = 32.000000000000000000
-      Position.Y = 752.000000000000000000
+    TabOrder = 1
+    object Button1: TButton
+      Position.X = 712.000000000000000000
+      Position.Y = 760.000000000000000000
       TabOrder = 71
       Text = 'Mitchell'
-      OnClick = Button2Click
+      OnClick = Button1Click
     end
-  end
-  object Button1: TButton
-    Position.X = 696.000000000000000000
-    Position.Y = 752.000000000000000000
-    TabOrder = 0
-    Text = 'Cubic'
-    OnClick = Button1Click
   end
   object OpenDialog1: TOpenDialog
     Left = 480
