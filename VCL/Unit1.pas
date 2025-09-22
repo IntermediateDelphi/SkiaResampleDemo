@@ -1,15 +1,14 @@
-﻿unit Unit1;
+unit Unit1;
 
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Menus, FMX.Objects, FMX.Controls.Presentation, FMX.StdCtrls;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
-    ImageControl1: TImageControl;
+    Image1: TImage;
     Button1: TButton;
     OpenDialog1: TOpenDialog;
     procedure Button1Click(Sender: TObject);
@@ -24,10 +23,10 @@ var
 
 implementation
 
-{$R *.fmx}
+{$R *.dfm}
 
 uses
-  System.Skia, FMX.Skia;
+  System.Skia, VCL.Skia, System.UITypes;
 
 function ResizeImageMitchell(const AFilename: String;
   const ANewWidth, ANewHeight: Integer): TBitmap;
@@ -36,7 +35,7 @@ var
   LSurface: ISkSurface;
   LCanvas: ISkCanvas;
   LPaint: ISkPaint;
-  SrcRect, DstRect: TRectF;
+  SrcRect, DstRect: TRect;
   MitchellSampling: TSkSamplingOptions;
 begin
   Result := nil;
@@ -64,8 +63,8 @@ begin
   );
 
   // Define source and destination rectangles
-  SrcRect := TRectF.Create(0, 0, LImage.Width, LImage.Height);
-  DstRect := TRectF.Create(0, 0, ANewWidth, ANewHeight);
+  SrcRect := TRect.Create(0, 0, LImage.Width, LImage.Height);
+  DstRect := TRect.Create(0, 0, ANewWidth, ANewHeight);
 
   // Clear the canvas
   LCanvas.Clear(TAlphaColors.Null);
@@ -77,6 +76,7 @@ begin
   Result := SKImageToBitmap(LSurface.MakeImageSnapshot);
 end;
 
+
 procedure TForm1.Button1Click(Sender: TObject);
 var
   bmp: TBitmap;
@@ -87,10 +87,9 @@ if(OpenDialog1.Execute) then
     bmp := ResizeImageMitchell(OpenDialog1.Filename, 800, 800);
     if(Assigned(bmp)) then
       begin
-        ImageControl1.Bitmap := bmp;
+        Image1.Picture.Bitmap := bmp;
         bmp.free;
       end;
-  end;
-end;
+  end;end;
 
 end.

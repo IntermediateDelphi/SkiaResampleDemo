@@ -6,10 +6,10 @@
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">ResampleTest</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">ResampleTestFMX</ProjectName>
         <TargetedPlatforms>693395</TargetedPlatforms>
         <AppType>Application</AppType>
-        <MainSource>ResampleTest.dpr</MainSource>
+        <MainSource>ResampleTestFMX.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -112,7 +112,7 @@
         <AUP_READ_PHONE_STATE>true</AUP_READ_PHONE_STATE>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <SanitizedProjectName>ResampleTest</SanitizedProjectName>
+        <SanitizedProjectName>ResampleTestFMX</SanitizedProjectName>
         <DCC_Define>SKIA;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
@@ -329,7 +329,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">ResampleTest.dpr</Source>
+                    <Source Name="MainSource">ResampleTestFMX.dpr</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment Version="5">
@@ -444,21 +444,21 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\ResampleTest.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\ResampleTestFMX.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>ResampleTest.exe</RemoteName>
+                        <RemoteName>ResampleTestFMX.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win64\Debug\ResampleTest.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win64\Debug\ResampleTestFMX.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
-                        <RemoteName>ResampleTest.exe</RemoteName>
+                        <RemoteName>ResampleTestFMX.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win64\Debug\ResampleTest.rsm" Configuration="Debug" Class="DebugSymbols">
+                <DeployFile LocalName="Win64\Debug\ResampleTestFMX.rsm" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="Win64">
-                        <RemoteName>ResampleTest.rsm</RemoteName>
+                        <RemoteName>ResampleTestFMX.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

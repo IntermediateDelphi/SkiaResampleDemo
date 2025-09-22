@@ -1,29 +1,31 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'ResampleTestFMX'
   ClientHeight = 800
   ClientWidth = 800
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
-  object ImageControl1: TImageControl
+  object OpenDialog1: TOpenDialog
+    Left = 480
+    Top = 160
+  end
+  object Image1: TImage
+    MultiResBitmap = <
+      item
+      end>
     Align = Client
     Size.Width = 800.000000000000000000
     Size.Height = 800.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 1
-    object Button1: TButton
-      Position.X = 712.000000000000000000
-      Position.Y = 760.000000000000000000
-      TabOrder = 71
-      Text = 'Mitchell'
-      OnClick = Button1Click
-    end
   end
-  object OpenDialog1: TOpenDialog
-    Left = 480
-    Top = 160
+  object Button1: TButton
+    Position.X = 712.000000000000000000
+    Position.Y = 760.000000000000000000
+    TabOrder = 70
+    Text = 'Mitchell'
+    OnClick = Button1Click
   end
 end

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{68A8AE1C-EFA8-48DB-9D52-C7A6F2E46933}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FMX\ResampleTestFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\ResampleTestVCL.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ResampleTestFMX">
+        <MSBuild Projects="FMX\ResampleTestFMX.dproj"/>
+    </Target>
+    <Target Name="ResampleTestFMX:Clean">
+        <MSBuild Projects="FMX\ResampleTestFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ResampleTestFMX:Make">
+        <MSBuild Projects="FMX\ResampleTestFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ResampleTestVCL">
+        <MSBuild Projects="VCL\ResampleTestVCL.dproj"/>
+    </Target>
+    <Target Name="ResampleTestVCL:Clean">
+        <MSBuild Projects="VCL\ResampleTestVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ResampleTestVCL:Make">
+        <MSBuild Projects="VCL\ResampleTestVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ResampleTestFMX;ResampleTestVCL"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ResampleTestFMX:Clean;ResampleTestVCL:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ResampleTestFMX:Make;ResampleTestVCL:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,17 +1,15 @@
-program ResampleTest;
+program ResampleTestVCL;
 
 uses
-  System.StartUpCopy,
-  FMX.Forms,
-  FMX.Skia,
+  Vcl.Forms,
   Unit1 in 'Unit1.pas' {Form1};
 
 {$R *.res}
 
 begin
-  GlobalUseSkia := True;
   ReportMemoryLeaksOnShutdown := True;
   Application.Initialize;
+  Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
